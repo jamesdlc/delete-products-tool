@@ -1,4 +1,5 @@
-#Delete Products Tool
+# Delete Products Tool
+
 The Delete Products tool is used to soft-delete products and remove them from an online mobile market place.
 
 ## How to use
