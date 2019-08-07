@@ -5,7 +5,7 @@ const PARSE_MASTER_KEY = process.env.PARSE_MASTER_KEY;
 const VENDOR_ID = process.env.VENDOR_ID;
 const PARSE_URL = process.env.PARSE_URL;
 
-let querySize = 50;
+let querySize = 1000;
 let successfulSaveCounter = 0;
 let errorSaveCounter = 0;
 
