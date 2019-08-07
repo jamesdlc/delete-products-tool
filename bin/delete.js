@@ -48,10 +48,10 @@ let getProducts = () => {
             allProducts.push(tempProduct);
           });
 
-          var softDeleteProducts = products => {
-            var softDeleteQuery = new Parse.Query(Product);
+          let softDeleteProducts = products => {
+            let softDeleteQuery = new Parse.Query(Product);
             softDeleteQuery.equalTo("objectId", products[0].objectId);
-            var now = new Date();
+            let now = new Date();
             softDeleteQuery.first({
               success: foundProduct => {
                 foundProduct.set("deletedAt", now);
@@ -78,7 +78,7 @@ let getProducts = () => {
                       if (products.length % 250 === 0) {
                         let now = new Date();
                         now = now.toLocaleString();
-                        console.log("Still running. " + now);
+                        console.log("Still running... " + now);
                       }
                       softDeleteProducts(products);
                     }
@@ -101,7 +101,7 @@ let getProducts = () => {
                   },
                   error: (originalObject, error) => {
                     errorSaveCounter++;
-                    console.log(
+                    console.error(
                       "Something went wrong while attempting to save updates to this Product.",
                       originalObject,
                       error
@@ -136,7 +136,7 @@ let getProducts = () => {
       );
     },
     productCountErr => {
-      console.log(
+      console.error(
         "Something went wrong while getting Product count.",
         productCountErr
       );
